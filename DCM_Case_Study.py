@@ -141,7 +141,7 @@ if __name__ == '__main__':
     df2['Proportion'] = df2['QUANTITY TRANSFER OFF-SITE'].apply(lambda x: 100*x/Total_2)
     group2 = df2.groupby(['SENDER CONDITION OF USE', 'FINAL HANDLER PRIMARY NAICS TITLE'], as_index = False).sum()
 
-    # Third level (HIS -> WMH) and Fourth level  (HIS -> EoU)
+    # Third level (HIS -> WMH) and Fourth level  (HIS -> EoL)
     df3 = df_sankey[['QUANTITY TRANSFER OFF-SITE', 'GENERAL WASTE MANAGEMENT',
                      'FINAL HANDLER PRIMARY NAICS TITLE']]
     Total_3 = df3['QUANTITY TRANSFER OFF-SITE'].sum()
@@ -150,7 +150,7 @@ if __name__ == '__main__':
     group3 =  group_aux.loc[group_aux['GENERAL WASTE MANAGEMENT'].isin(['Energy recovery', 'Recycling'])]
     group4 =  group_aux.loc[~group_aux['GENERAL WASTE MANAGEMENT'].isin(['Energy recovery', 'Recycling'])]
 
-    # Fifth leve (EoU -> WMH)
+    # Fifth leve (EoL -> WMH)
     df4 = df_sankey[['QUANTITY TRANSFER OFF-SITE', 'GENERAL WASTE MANAGEMENT',
                      'TYPE OF WASTE MANAGEMENT']]
     df4 =  df4.loc[~df4['GENERAL WASTE MANAGEMENT'].isin(['Energy recovery', 'Recycling'])]
@@ -198,17 +198,17 @@ if __name__ == '__main__':
     group6 = df6.groupby(['TYPE OF WASTE MANAGEMENT', 'COMPARTMENT'], as_index = False).sum()
 
     # Generating labels for Sankey diagram
-    GiS = {val: 'GiS. ' + str(idx + 1) for idx, val \
+    GiS = {val: 'GiS-' + str(idx + 1) for idx, val \
         in enumerate(list(group1['SENDER TRI PRIMARY NAICS TITLE'].unique()))}
-    CoU = {val: 'CoU. ' + str(idx + 1) for idx, val \
+    CoU = {val: 'CoU-' + str(idx + 1) for idx, val \
         in enumerate(list(group1['SENDER CONDITION OF USE'].unique()))}
-    HIS = {val: 'HIS. ' + str(idx + 1) for idx, val \
+    HIS = {val: 'HIS-' + str(idx + 1) for idx, val \
         in enumerate(list(group2['FINAL HANDLER PRIMARY NAICS TITLE'].unique()))}
-    EoU = {val: 'EoU. ' + str(idx + 1) for idx, val \
+    EoL = {val: 'EoL-' + str(idx + 1) for idx, val \
         in enumerate(list(group4['GENERAL WASTE MANAGEMENT'].unique()))}
-    WMH = {val: 'WMH. ' + str(idx + 1) for idx, val \
+    WMH = {val: 'WMH-' + str(idx + 1) for idx, val \
         in enumerate(list(group6['TYPE OF WASTE MANAGEMENT'].unique()))}
-    EC = {val: 'EC. ' + str(idx + 1) for idx, val \
+    EC = {val: 'EC-' + str(idx + 1) for idx, val \
         in enumerate(list(group6['COMPARTMENT'].unique()))}
 
     # Saving percentages
@@ -232,7 +232,7 @@ if __name__ == '__main__':
     for key, value in CoU.items():
         CoU_aux.update({value: ' + '.join(TRI[e] for e in key.split(' + '))})
     j = 0
-    for l in [GiS, TRI, CoU_aux, HIS, EoU, WMH, EC]:
+    for l in [GiS, TRI, CoU_aux, HIS, EoL, WMH, EC]:
         j = j + 1
         df_aux = pd.DataFrame({'Col 1': list(l.keys()), 'Col 2': list(l.values())})
         df_aux.to_csv(dir_path + '/Label_names_' + str(j) + '.csv', sep = ',', index = False)
@@ -244,7 +244,7 @@ if __name__ == '__main__':
     colors_2 = ['#0066cc' for i in range(len(level_2))]
     level_3 = list(HIS.values())
     colors_3 = ['#009933' for i in range(len(level_3))]
-    level_4 = list(EoU.values())
+    level_4 = list(EoL.values())
     colors_4 = ['#ff944d' for i in range(len(level_4))]
     level_5 = list(WMH.values())
     colors_5 = ['#ffcc66' for i in range(len(level_5))]
@@ -274,11 +274,11 @@ if __name__ == '__main__':
 
     for index, row in group4.iterrows():
         Sources.append(levels.index(HIS[row['FINAL HANDLER PRIMARY NAICS TITLE']]))
-        Targets.append(levels.index(EoU[row['GENERAL WASTE MANAGEMENT']]))
+        Targets.append(levels.index(EoL[row['GENERAL WASTE MANAGEMENT']]))
         Values.append(row['Proportion'])
 
     for index, row in group5.iterrows():
-        Sources.append(levels.index(EoU[row['GENERAL WASTE MANAGEMENT']]))
+        Sources.append(levels.index(EoL[row['GENERAL WASTE MANAGEMENT']]))
         Targets.append(levels.index(WMH[row['TYPE OF WASTE MANAGEMENT']]))
         Values.append(row['Proportion'])
 
