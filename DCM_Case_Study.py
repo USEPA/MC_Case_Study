@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 pd.options.mode.chained_assignment = None
 import os
-import sys
 import warnings
 warnings.simplefilter(action = 'ignore', category = FutureWarning)
 import plotly
@@ -36,7 +35,7 @@ def Maximum_on_site(x):
     elif x == 10:
         return 0.453592*np.random.uniform(500000000,999999999)
     elif x == 11:
-        return 0.453592*np.random.uniform(1000000000,sys.maxsize)
+        return 0.453592*np.random.uniform(1000000000, 10000000000)
     elif x == 12:
         return 0.001*np.random.uniform(0,0.099)
     elif x == 13:
@@ -54,7 +53,7 @@ def Maximum_on_site(x):
     elif x == 19:
         return 0.001*np.random.uniform(100000,999999)
     elif x == 20:
-        return 0.001*np.random.uniform(1000000,sys.maxsize)
+        return 0.001*np.random.uniform(1000000, 100000000)
 
 
 def Cal(keys, m, w):
@@ -134,14 +133,14 @@ if __name__ == '__main__':
     df1['Proportion'] = df1['QUANTITY TRANSFER OFF-SITE'].apply(lambda x: 100*x/Total_1)
     group1 = df1.groupby(['SENDER TRI PRIMARY NAICS TITLE', 'SENDER CONDITION OF USE'], as_index = False).sum()
 
-    # Second level (CoU -> HIS)
+    # Second level (CoU -> RETDFiS)
     df2 = df_sankey[['SENDER CONDITION OF USE', 'QUANTITY TRANSFER OFF-SITE',
                     'FINAL HANDLER PRIMARY NAICS TITLE']]
     Total_2 = df2['QUANTITY TRANSFER OFF-SITE'].sum()
     df2['Proportion'] = df2['QUANTITY TRANSFER OFF-SITE'].apply(lambda x: 100*x/Total_2)
     group2 = df2.groupby(['SENDER CONDITION OF USE', 'FINAL HANDLER PRIMARY NAICS TITLE'], as_index = False).sum()
 
-    # Third level (HIS -> WMH) and Fourth level  (HIS -> EoL)
+    # Third level (RETDFiS -> WMH) and Fourth level  (RETDFiS -> EoL)
     df3 = df_sankey[['QUANTITY TRANSFER OFF-SITE', 'GENERAL WASTE MANAGEMENT',
                      'FINAL HANDLER PRIMARY NAICS TITLE']]
     Total_3 = df3['QUANTITY TRANSFER OFF-SITE'].sum()
@@ -202,7 +201,7 @@ if __name__ == '__main__':
         in enumerate(list(group1['SENDER TRI PRIMARY NAICS TITLE'].unique()))}
     CoU = {val: 'CoU-' + str(idx + 1) for idx, val \
         in enumerate(list(group1['SENDER CONDITION OF USE'].unique()))}
-    HIS = {val: 'HIS-' + str(idx + 1) for idx, val \
+    RETDFiS = {val: 'RETDFiS-' + str(idx + 1) for idx, val \
         in enumerate(list(group2['FINAL HANDLER PRIMARY NAICS TITLE'].unique()))}
     EoL = {val: 'EoL-' + str(idx + 1) for idx, val \
         in enumerate(list(group4['GENERAL WASTE MANAGEMENT'].unique()))}
@@ -232,7 +231,7 @@ if __name__ == '__main__':
     for key, value in CoU.items():
         CoU_aux.update({value: ' + '.join(TRI[e] for e in key.split(' + '))})
     j = 0
-    for l in [GiS, TRI, CoU_aux, HIS, EoL, WMH, EC]:
+    for l in [GiS, TRI, CoU_aux, RETDFiS, EoL, WMH, EC]:
         j = j + 1
         df_aux = pd.DataFrame({'Col 1': list(l.keys()), 'Col 2': list(l.values())})
         df_aux.to_csv(dir_path + '/Label_names_' + str(j) + '.csv', sep = ',', index = False)
@@ -242,7 +241,7 @@ if __name__ == '__main__':
     colors_1 = ['#ff5050' for i in range(len(level_1))]
     level_2 = list(CoU.values())
     colors_2 = ['#0066cc' for i in range(len(level_2))]
-    level_3 = list(HIS.values())
+    level_3 = list(RETDFiS.values())
     colors_3 = ['#009933' for i in range(len(level_3))]
     level_4 = list(EoL.values())
     colors_4 = ['#ff944d' for i in range(len(level_4))]
@@ -264,16 +263,16 @@ if __name__ == '__main__':
 
     for index, row in group2.iterrows():
         Sources.append(levels.index(CoU[row['SENDER CONDITION OF USE']]))
-        Targets.append(levels.index(HIS[row['FINAL HANDLER PRIMARY NAICS TITLE']]))
+        Targets.append(levels.index(RETDFiS[row['FINAL HANDLER PRIMARY NAICS TITLE']]))
         Values.append(row['Proportion'])
 
     for index, row in group3.iterrows():
         Targets.append(levels.index(WMH[row['GENERAL WASTE MANAGEMENT']]))
-        Sources.append(levels.index(HIS[row['FINAL HANDLER PRIMARY NAICS TITLE']]))
+        Sources.append(levels.index(RETDFiS[row['FINAL HANDLER PRIMARY NAICS TITLE']]))
         Values.append(row['Proportion'])
 
     for index, row in group4.iterrows():
-        Sources.append(levels.index(HIS[row['FINAL HANDLER PRIMARY NAICS TITLE']]))
+        Sources.append(levels.index(RETDFiS[row['FINAL HANDLER PRIMARY NAICS TITLE']]))
         Targets.append(levels.index(EoL[row['GENERAL WASTE MANAGEMENT']]))
         Values.append(row['Proportion'])
 
