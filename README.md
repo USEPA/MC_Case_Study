@@ -1,3 +1,3 @@
-# DCM Case Study
+# MC Case Study
 
-This code was written to support the Methylene Chloride´s case study for the paper named Data engineering for tracking chemicals and releases at industrial end-of-use activities.
+This code was written to support the case study for Methylene Chloride for the paper named Data engineering for tracking chemicals and releases at industrial end-of-life activities.
