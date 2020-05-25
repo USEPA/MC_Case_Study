@@ -15,49 +15,56 @@ from plotly.subplots import make_subplots
 
 def Maximum_on_site(x):
     if x == 1:
-        return 0.453592*np.random.uniform(0,99)
+        return 0.453592*99
     elif x == 2:
-        return 0.453592*np.random.uniform(100,999)
+        return 0.453592*999
     elif x == 3:
-        return 0.453592*np.random.uniform(1000,9999)
+        return 0.453592*9999
     elif x == 4:
-        return 0.453592*np.random.uniform(10000,99999)
+        return 0.453592*99999
     elif x == 5:
-        return 0.453592*np.random.uniform(100000,999999)
+        return 0.453592*999999
     elif x == 6:
-        return 0.453592*np.random.uniform(1000000,9999999)
+        return 0.453592*9999999
     elif x == 7:
-        return 0.453592*np.random.uniform(10000000,49999999)
+        return 0.453592*49999999
     elif x == 8:
-        return 0.453592*np.random.uniform(50000000,99999999)
+        return 0.453592*99999999
     elif x == 9:
-        return 0.453592*np.random.uniform(100000000,499999999)
+        return 0.453592*499999999
     elif x == 10:
-        return 0.453592*np.random.uniform(500000000,999999999)
+        return 0.453592*999999999
     elif x == 11:
-        return 0.453592*np.random.uniform(1000000000, 10000000000)
+        return 0.453592*10000000000
     elif x == 12:
-        return 0.001*np.random.uniform(0,0.099)
+        return 0.001*0.099
     elif x == 13:
-        return 0.001*np.random.uniform(0.1,0.99)
+        return 0.001*0.99
     elif x == 14:
-        return 0.001*np.random.uniform(1,9.99)
+        return 0.001*9.99
     elif x == 15:
-        return 0.001*np.random.uniform(10,99)
+        return 0.001*99
     elif x == 16:
-        return 0.001*np.random.uniform(100,999)
+        return 0.001*999
     elif x == 17:
-        return 0.001*np.random.uniform(1000,9999)
+        return 0.001*9999
     elif x == 18:
-        return 0.001*np.random.uniform(10000,99999)
+        return 0.001*99999
     elif x == 19:
-        return 0.001*np.random.uniform(100000,999999)
+        return 0.001*999999
     elif x == 20:
-        return 0.001*np.random.uniform(1000000, 100000000)
+        return 0.001*100000000
 
 
-def Cal(keys, m, w):
-    results = {key: 1/(Maximum_on_site(m) + w) for key in keys}
+def annual_change(max_annual_change, Total_releases_from_RETDF, Total_waste_at_RETDF):
+    min_value = max([-max_annual_change, Total_releases_from_RETDF - Total_waste_at_RETDF])
+    max_value = max_annual_change
+    return np.random.uniform(min_value, max_value)
+
+
+def Cal(keys, m, w, r):
+    Max_onsite = Maximum_on_site(m)
+    results = {key: 1/(annual_change(Max_onsite, r, w) + w) for key in keys}
     return results
 
 
@@ -87,19 +94,13 @@ def values(x):
         return 4
 
 
-if __name__ == '__main__':
-
-    Sample = 100
-    ITN = '5306'
+def Creating_tracking_and_analyses(df_path, Sample, ITN ):
     dir_path = os.path.dirname(os.path.realpath(__file__)) # Current directory
-
-
-    Path = dir_path + '/TRI_SRS_FRS_RCRAInfo_EPCRA_Compartments_CompTox_3a_2017_EoL.csv'
     columns = ['SENDER TRI PRIMARY NAICS TITLE', 'SRS CHEMICAL ITN',\
            'SENDER CONDITION OF USE', 'QUANTITY TRANSFER OFF-SITE', 'GENERAL WASTE MANAGEMENT', \
            'TYPE OF WASTE MANAGEMENT', 'FINAL HANDLER TRI ID', 'FINAL HANDLER PRIMARY NAICS TITLE', \
            'FINAL HANDLER MAXIMUM AMOUNT ON-SITE', 'TOTAL WASTE GENERATED', \
-           'COMPARTMENT', 'FLOW TO COMPARTMENT']
+           'COMPARTMENT', 'FLOW TO COMPARTMENT', 'TOTAL RELEASES']
     type = {'SENDER TRI PRIMARY NAICS TITLE':'str',
             'SRS CHEMICAL ITN': 'str',
             'SENDER CONDITION OF USE':'str',
@@ -111,11 +112,10 @@ if __name__ == '__main__':
             'FINAL HANDLER MAXIMUM AMOUNT ON-SITE':'int',
             'TOTAL WASTE GENERATED': 'float',
             'COMPARTMENT':'str',
-            'FLOW TO COMPARTMENT':'float'}
-    df = pd.read_csv(Path, sep = ',', usecols = columns, low_memory = False, dtype = type, header = 0)
-
+            'FLOW TO COMPARTMENT':'float',
+            'TOTAL RELEASES': 'float'}
+    df = pd.read_csv(df_path, sep = ',', usecols = columns, low_memory = False, dtype = type, header = 0)
     df_chem = df.loc[df['SRS CHEMICAL ITN'] == ITN]
-
     df_sankey = df_chem[['SENDER TRI PRIMARY NAICS TITLE',
                     'SENDER CONDITION OF USE',
                     'QUANTITY TRANSFER OFF-SITE',
@@ -124,6 +124,7 @@ if __name__ == '__main__':
                     'FINAL HANDLER TRI ID',
                     'FINAL HANDLER MAXIMUM AMOUNT ON-SITE',
                     'TOTAL WASTE GENERATED',
+                    'TOTAL RELEASES',
                     'FINAL HANDLER PRIMARY NAICS TITLE',
                     'COMPARTMENT',
                     'FLOW TO COMPARTMENT']]
@@ -158,28 +159,30 @@ if __name__ == '__main__':
 
     # Sixth level (WMH -> EC)
     df5 = df_sankey[['QUANTITY TRANSFER OFF-SITE', 'TYPE OF WASTE MANAGEMENT', 'FINAL HANDLER TRI ID', 'FINAL HANDLER MAXIMUM AMOUNT ON-SITE', \
-                 'TOTAL WASTE GENERATED', 'COMPARTMENT', 'FLOW TO COMPARTMENT']]
+                 'TOTAL WASTE GENERATED', 'COMPARTMENT', 'FLOW TO COMPARTMENT', 'TOTAL RELEASES']]
+    n_cols = df5.shape[1]
     df_handler_facility = df5[['FINAL HANDLER TRI ID', 'FINAL HANDLER MAXIMUM AMOUNT ON-SITE', \
-                                'TOTAL WASTE GENERATED']] \
+                                'TOTAL WASTE GENERATED', 'TOTAL RELEASES']] \
                             .drop_duplicates(keep = 'first')
     columns_maximum = ['INV MAXIMUM QUANTITY ON-SITE ' + str(N + 1) for N in range(Sample)]
     df_handler_facility = df_handler_facility.merge(\
                         df_handler_facility.apply(lambda s: pd.Series(Cal(columns_maximum,
                                                                           s['FINAL HANDLER MAXIMUM AMOUNT ON-SITE'],
-                                                                          s['TOTAL WASTE GENERATED'])), axis = 1),
+                                                                          s['TOTAL WASTE GENERATED'],
+                                                                          s['TOTAL RELEASES'])), axis = 1),
                         left_index = True, right_index = True)
     df5 = pd.merge(df5, df_handler_facility, how = 'left',
                on = ['FINAL HANDLER TRI ID', 'FINAL HANDLER MAXIMUM AMOUNT ON-SITE',
-                    'TOTAL WASTE GENERATED'])
-    df5_aux = df5.iloc[:,7:].multiply(df5['QUANTITY TRANSFER OFF-SITE'], axis = 'index')
-    df5_aux = df5_aux.multiply(df5['FLOW TO COMPARTMENT'], axis = 'index')
+                    'TOTAL WASTE GENERATED', 'TOTAL RELEASES'])
+    df5_aux = df5.iloc[:,n_cols:].multiply(df5['FLOW TO COMPARTMENT'], axis = 'index')
+    df5_aux = df5_aux.multiply(df5['QUANTITY TRANSFER OFF-SITE'], axis = 'index')
     columns_flow = {'INV MAXIMUM QUANTITY ON-SITE ' + str(N + 1): \
                      'RELEASE TO COMPARTMENT ' + str(N + 1) for N in range(Sample)}
     df5_aux.rename(columns = columns_flow, inplace = True)
-    df5 = pd.concat([df5.iloc[:,0:7], df5_aux], axis =  1)
+    df5 = pd.concat([df5.iloc[:,0:n_cols], df5_aux], axis =  1)
     del df5_aux
-    df5['STD FLOW TO COMPARTMENT'] = df5.iloc[:,7:Sample + 7].std(axis = 1)
-    df5['MEAN FLOW TO COMPARTMENT'] = df5.iloc[:,7:Sample + 7].mean(axis = 1)
+    df5['STD FLOW TO COMPARTMENT'] = df5.iloc[:,n_cols:Sample + n_cols].std(axis = 1)
+    df5['MEAN FLOW TO COMPARTMENT'] = df5.iloc[:,n_cols:Sample + n_cols].mean(axis = 1)
     df6 = df5[['TYPE OF WASTE MANAGEMENT', 'COMPARTMENT', 'MEAN FLOW TO COMPARTMENT']]
     func = {'QUANTITY TRANSFER OFF-SITE': lambda x: 0.25*x.sum(),
             'MEAN FLOW TO COMPARTMENT': lambda x: x.sum()}
@@ -214,19 +217,19 @@ if __name__ == '__main__':
     i = 0
     for gr in [group1, group2, group3, group4, group5, group6]:
         i = i + 1
-        gr.to_csv(dir_path + '/Percentages_' + str(i) + '.csv', sep = ',', index = False)
+        gr.to_csv(dir_path + '/Percentages_{}_'.format(ITN) + str(i) + '.csv', sep = ',', index = False)
 
     # Saving label names
-    TRI = {'Added as a formulation component': 'TRIU. 1',
-        'Used as a chemical processing aid': 'TRIU. 2',
-        'Repackaging': 'TRIU. 3',
-        'Ancillary or other use': 'TRIU. 4',
-        'Produce the chemical': 'TRIU. 5',
-        'Used as a reactant': 'TRIU. 6',
-        'As a process impurity': 'TRIU. 7',
-        'Used as a manufacturing aid': 'TRIU. 8',
-        'Import the chemical': 'TRIU. 9',
-        'Used as an article component': 'TRIU. 10'}
+    TRI = {'Added as a formulation component': 'TRIU-1',
+        'Used as a chemical processing aid': 'TRIU-2',
+        'Repackaging': 'TRIU-3',
+        'Ancillary or other use': 'TRIU-4',
+        'Produce the chemical': 'TRIU-5',
+        'Used as a reactant': 'TRIU-6',
+        'As a process impurity': 'TRIU-7',
+        'Used as a manufacturing aid': 'TRIU-8',
+        'Import the chemical': 'TRIU-9',
+        'Used as an article component': 'TRIU-10'}
     CoU_aux = {}
     for key, value in CoU.items():
         CoU_aux.update({value: ' + '.join(TRI[e] for e in key.split(' + '))})
@@ -234,7 +237,7 @@ if __name__ == '__main__':
     for l in [GiS, TRI, CoU_aux, RETDFiS, EoL, WMH, EC]:
         j = j + 1
         df_aux = pd.DataFrame({'Col 1': list(l.keys()), 'Col 2': list(l.values())})
-        df_aux.to_csv(dir_path + '/Label_names_' + str(j) + '.csv', sep = ',', index = False)
+        df_aux.to_csv(dir_path + '/Label_names_{}_'.format(ITN) + str(j) + '.csv', sep = ',', index = False)
 
     # Levels and colors
     level_1 = list(GiS.values())
@@ -306,9 +309,9 @@ if __name__ == '__main__':
                        paper_bgcolor = '#e8e8e8',
                        width=1000,
                        height=900)
-    fig1.write_image(dir_path + '/Sankey_Methylene_Chloride.pdf')
+    fig1.write_image(dir_path + '/Sankey_{}.pdf'.format(ITN))
 
-    df_box = df5.iloc[:,[1,5] + list(range(7,Sample + 7))]
+    df_box = df5.iloc[:,[1,5] + list(range(n_cols,Sample + n_cols))]
     EC_non_cero = list(df_box.loc[~(df_box.iloc[:,2:] == 0.0).all(axis = 1), 'COMPARTMENT'].unique())
     WMH_non_cero = list(df_box.loc[~(df_box.iloc[:,2:] == 0.0).all(axis = 1), 'TYPE OF WASTE MANAGEMENT'].unique())
 
@@ -411,7 +414,7 @@ if __name__ == '__main__':
                 )
     fig2.update_xaxes(title_font=dict(size=18))
     fig2.update_yaxes(title_font=dict(size=20))
-    fig2.write_image(dir_path + '/Box_Methylene_Chloride.pdf')
+    fig2.write_image(dir_path + '/Box_{}.pdf'.format(ITN))
 
     # Histogram
     df_histogram = pd.DataFrame(columns = ['Management', 'Flow', 'Compartment'])
@@ -491,4 +494,12 @@ if __name__ == '__main__':
                                         bgcolor = 'White',
                                         bordercolor = '#6666ff',
                                         borderwidth = 1))
-    fig3.write_image(dir_path + '/Histogram_Methylene_Chloride.pdf')
+    fig3.write_image(dir_path + '/Histogram_{}.pdf'.format(ITN))
+
+
+if __name__ == '__main__':
+
+    Path_to_EoL_database = input('Enter the path of your file: ')
+    Sample_size = int(input('Sample size: ')) # Case study 100
+    ITN = input('Internal tracking number: ') # Case study 5306
+    Creating_tracking_and_analyses(Path_to_EoL_database, Sample_size, ITN)
