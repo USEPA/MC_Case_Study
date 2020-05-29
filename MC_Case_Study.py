@@ -9,7 +9,6 @@ import os
 import warnings
 warnings.simplefilter(action = 'ignore', category = FutureWarning)
 import plotly
-import chart_studio.plotly as py
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
