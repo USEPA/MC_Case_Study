@@ -18,4 +18,4 @@ In order to run the code you will need to input:
 
 1. The sample size for calculating indirect releases
 2. The internal tracking number for the chemical in the U.S. Environmental Protection Agency's Substance Registry Services (https://ofmpub.epa.gov/sor_internet/registry/substreg/LandingPage.do)
-3. The file where the EoL database is located (the current version is in private repository)
+3. The path where the EoL database is located (the current version is in private repository)
