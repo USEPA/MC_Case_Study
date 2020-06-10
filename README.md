@@ -14,7 +14,7 @@ The following Python libraries are required for running the code:
 
 The Python Script requires the EoL_database_for_MC.csv to run the case study for Methylene Chloride. The EoL_database_for_MC.csv is composed by the following data entries according to Table S2 of Supportive Information file:
 
-| Data name | Data type |
+| Data name | Data type<sup>[1](#myfootnote1)</sup> |
 | ------------- | ------------- |
 | Generator primary NAICS name  | Alphanumeric  |
 | SRS chemical ID  | Integer  |
@@ -31,4 +31,4 @@ The Python Script requires the EoL_database_for_MC.csv to run the case study for
 | RETDF chemical flow releases to the compartment | Float |
 | RETDF total chemical release | Float |
 
-The data entries of float type are in **kg**
+<a name="myfootnote1">1</a>: The data entries of float type are in **kg**
