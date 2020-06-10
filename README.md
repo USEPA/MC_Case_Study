@@ -47,5 +47,8 @@ After running the Python scrip you obtain the following files:
 
 
 <a name="myfootnote1">1</a>: The data entries of float type are in **kg**.
+
 <a name="myfootnote2">2</a>: They are 7 files.
+
 <a name="myfootnote3">3</a>: They are 6 files.
+
