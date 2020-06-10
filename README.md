@@ -12,7 +12,7 @@ The following Python libraries are required for running the code:
 
 ## Use
 
-The Python Script requires the EoL_database_for_MC.csv to run the case study for Methylene Chloride. The EoL_database_for_MC.csv is composed by the following data entries according to Table S2 of Supportive Information file:
+The Python Script requires the EoL_database_for_MC.csv to run the case study for Methylene Chloride. The EoL_database_for_MC.csv is composed by the following data entries according to Table S2 in the Supporting Information:
 
 | Data name | Data type<sup>[1](#myfootnote1)</sup> |
 | ------------- | ------------- |
