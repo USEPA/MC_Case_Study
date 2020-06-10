@@ -2,8 +2,6 @@
 
 This code was written to support the case study for *Methylene Chloride* for the paper named ***Data engineering for tracking chemicals and releases at industrial end-of-life activities***.
 
-Note: In order to run the code you need to have the **EoL database** which is obtained as explained in the above paper
-
 ## Requirements
 
 The following Python libraries are required for running the code:
@@ -14,8 +12,21 @@ The following Python libraries are required for running the code:
 
 ## Use
 
-In order to run the code you will need to input:
+The Python Script requires the EoL_database_for_MC.csv to run the case study for Methylene Chloride. The EoL_database_for_MC.csv is composed by the following data entries according to Table S2 of Supportive Information file:
 
-1. The sample size for calculating indirect releases
-2. The internal tracking number for the chemical in the U.S. Environmental Protection Agency's Substance Registry Services (https://ofmpub.epa.gov/sor_internet/registry/substreg/LandingPage.do)
-3. The path where the **EoL database** is located (the current version is in private repository)
+| Data name | Data type |
+| ------------- | ------------- |
+| Generator primary NAICS name  | Alphanumeric  |
+| SRS chemical ID  | Integer  |
+| Generator condition of use  | Alphanumeric  |
+| Quantity transferred by generator  | Float  |
+| EoL activity category under TSCA  | Alphanumeric |
+| EoL activity category under TSCA  | Alphanumeric |
+| EoL activity category under waste management hierarchy | Alphanumeric |
+| RETDF TRIF ID | Alphanumeric |
+| RETDF primary NAICS name | Alphanumeric |
+| Maximum amount of chemical present at RETDF | Integer |
+| Total chemical generated as waste by RETDF | Float |
+| Environmental compartment | Alphanumeric |
+| RETDF chemical flow releases to the compartment | Float |
+| RETDF total chemical release | Float |
