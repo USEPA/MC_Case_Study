@@ -30,3 +30,5 @@ The Python Script requires the EoL_database_for_MC.csv to run the case study for
 | Environmental compartment | Alphanumeric |
 | RETDF chemical flow releases to the compartment | Float |
 | RETDF total chemical release | Float |
+
+The data entries of float type are in **kg**
