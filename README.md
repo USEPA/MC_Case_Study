@@ -45,6 +45,7 @@ After running the Python scrip you obtain the following files:
 | Label_names_5306_#.csv<sup>[2](#myfootnote2)</sup> | Label names for the levels in the Sankey diagram |
 | Percentages_5306_#.csv<sup>[3](#myfootnote3)</sup> | Percentages/fractions for the levels in the Sankey diagram |
 
+#### ------------------------------------------------------------------------------------------------------------------------
 
 <a name="myfootnote1">1</a>: The data entries of float type are in **kg**.
 
