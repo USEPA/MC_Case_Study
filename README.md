@@ -35,7 +35,7 @@ To run the Python script, you need to navigate to the directory containing the .
 
 ## Outputs
 
-After running the Python scrip you obtain the following files:
+After running the Python script you obtain the following files:
 
 | File name | Description |
 | ------------- | ------------- |
