@@ -35,7 +35,6 @@ To run the Python script, you need to navigate to the directory containing the .
 
 ```
 python MC_Case_Study.py
-
 ```
   
 ## Outputs
