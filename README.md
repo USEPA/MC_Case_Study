@@ -10,7 +10,7 @@ The following Python libraries are required for running the code:
 2. plotly (https://pypi.org/project/plotly/)
 3. pandas (https://pypi.org/project/pandas/)
 
-## Use
+## How to use
 
 The Python Script requires the EoL_database_for_MC.csv to run the case study for Methylene Chloride. The EoL_database_for_MC.csv is composed of the following data entries according to Table S2 in the Supporting Information:
 
@@ -48,6 +48,19 @@ After running the Python script you obtain the following files:
 | Histogram_5306.pdf  | Histogram for the case study, Figure 8  |
 | Label_names_5306_#.csv<sup>[2](#myfootnote2)</sup> | Label names for the levels in the Sankey diagram |
 | Percentages_5306_#.csv<sup>[3](#myfootnote3)</sup> | Percentages/fractions for the levels in the Sankey diagram |
+
+## Disclaimer
+
+The views expressed in this article are those of the authors and do not necessarily represent the views or policies of
+the USEPA. Any mention of trade names, products, or services does not imply an endorsement by the U.S.
+Government or the USEPA. The USEPA does not endorse any commercial products, service, or enterprises.
+
+## Acknowledgement
+
+This research was supported in by an appointment for Jose D. Hernandez-Betancur to the Research Participation
+Program at the Center for Environmental Solutions and Emergency Response, Office of Research and Development,
+USEPA, administered by the Oak Ridge Institute for Science and Education through an Interagency Agreement
+between the U.S. Department of Energy and the USEPA.
 
 #### ------------------------------------------------------------------------------------------------------------------------
 
