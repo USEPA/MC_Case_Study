@@ -3,7 +3,7 @@
 This code was written to support the case study for *Methylene Chloride* for the paper named ***Data engineering for tracking chemicals and releases at industrial end-of-life activities***.
 
 <sup>[1](#myfootnote1)</sup> 
-<a name="myfootnote1">1</a>: Recycling, energy recovery, treatment & disposal facility (RETDF).
+
 <img src=https://github.com/jodhernandezbe/MC_Case_Study/blob/master/Tracking_chemical_flows_at_industrial_end-of-use_stage.png width="80%">
 
 ## Requirements
@@ -66,6 +66,8 @@ Program at the Center for Environmental Solutions and Emergency Response, Office
 U.S. Environmental Protection Agency, administered by the Oak Ridge Institute for Science and Education through an Interagency Agreement No. DW-89-92433001 between the U.S. Department of Energy and the U.S. Environmental Protection Agency.
 
 -----------------------------------------------------------------------------------------------------------------------------
+<a name="myfootnote1">1</a>: Recycling, energy recovery, treatment & disposal facility (RETDF).
+
 <a name="myfootnote2">2</a>: The data entries of float type are in **kg**.
 
 <a name="myfootnote3">3</a>: They are 7 files.
