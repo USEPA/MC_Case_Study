@@ -31,9 +31,11 @@ The Python Script requires the EoL_database_for_MC.csv to run the case study for
 | RETDF chemical flow releases to the compartment | Float |
 | RETDF total chemical release | Float |
 
-To run the Python script, you need to navigate to the directory containing the .py and .csv files. Then, you execute the command:
+To run the Python script, you need to navigate to the directory containing the .py and .csv files. Then, you execute the following command either on Windows CMD or Unix terminal:
 
-**python MC_Case_Study.py** either on Windows CMD or Unix terminal.
+```
+python MC_Case_Study.py
+```
 
 ## Outputs
 
