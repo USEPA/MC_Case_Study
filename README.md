@@ -33,18 +33,11 @@ The Python Script requires the EoL_database_for_MC.csv to run the case study for
 
 To run the Python script, you need to navigate to the directory containing the .py and .csv files. Then, you execute the following command either on Windows CMD or Unix terminal:
 
-<div class="bg-gray">
-  python MC_Case_Study.py
-</div>
+```
+python MC_Case_Study.py
 
-<div class="text-orange mb-2">
-  .text-orange on white
-</div>
-
-- ![#f03c15](Moco)
-- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+)
-- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=+)
-
+```
+  
 ## Outputs
 
 After running the Python script you obtain the following files:
