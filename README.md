@@ -2,8 +2,7 @@
 
 This code was written to support the case study for *Methylene Chloride* for the paper named ***Data engineering for tracking chemicals and releases at industrial end-of-life activities***.
 
-<sup>[1](#myfootnote1)</sup>
-<img src=https://github.com/jodhernandezbe/MC_Case_Study/blob/master/Tracking_chemical_flows_at_industrial_end-of-use_stage.png width="80%">
+<img src=https://github.com/jodhernandezbe/MC_Case_Study/blob/master/Tracking_chemical_flows_at_industrial_end-of-use_stage.png width="80%" <sup>[1](#myfootnote1)</sup>>
 
 ## Requirements
 
