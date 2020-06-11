@@ -52,15 +52,15 @@ After running the Python script you obtain the following files:
 ## Disclaimer
 
 The views expressed in this article are those of the authors and do not necessarily represent the views or policies of
-the USEPA. Any mention of trade names, products, or services does not imply an endorsement by the U.S.
-Government or the USEPA. The USEPA does not endorse any commercial products, service, or enterprises.
+the U.S. Environmental Protection Agency. Any mention of trade names, products, or services does not imply an endorsement by the U.S.
+Government or the U.S. Environmental Protection Agency. The U.S. Environmental Protection Agency does not endorse any commercial products, service, or enterprises.
 
 ## Acknowledgement
 
 This research was supported in by an appointment for Jose D. Hernandez-Betancur to the Research Participation
 Program at the Center for Environmental Solutions and Emergency Response, Office of Research and Development,
-USEPA, administered by the Oak Ridge Institute for Science and Education through an Interagency Agreement
-between the U.S. Department of Energy and the USEPA.
+U.S. Environmental Protection Agency, administered by the Oak Ridge Institute for Science and Education through an Interagency Agreement
+between the U.S. Department of Energy and the U.S. Environmental Protection Agency.
 
 #### ------------------------------------------------------------------------------------------------------------------------
 
