@@ -19,7 +19,7 @@ The following Python libraries are required for running the code:
 
 ## How to use
 
-The Python Script requires the EoL_database_for_MC.csv to run the case study for Methylene Chloride. The EoL_database_for_MC.csv is composed of the following data entries according to Table S2 in the Supporting Information:
+The Python Script requires the EoL_dataset_for_MC.csv to run the case study for Methylene Chloride. The EoL_dataset_for_MC.csv is composed of the following data entries according to Table S2 in the Supporting Information:
 
 | Data name | Data type<sup>[2](#myfootnote2)</sup> |
 | ------------- | ------------- |
@@ -66,12 +66,12 @@ Government or the U.S. Environmental Protection Agency. The U.S. Environmental P
 
 This research was supported in by an appointment for Jose D. Hernandez-Betancur to the Research Participation
 Program at the Center for Environmental Solutions and Emergency Response, Office of Research and Development,
-U.S. Environmental Protection Agency, administered by the Oak Ridge Institute for Science and Education through an Interagency Agreement No. DW-89-92433001 between the U.S. Department of Energy and the U.S. Environmental Protection Agency.
+U.S. Environmental Protection Agency, administered by the Oak Ridge Institute for Science and Education through an Interagency Agreement No. DW-89-92433001 between the U.S. Department of Energy and the U.S. Environmental Protection Agency. The authors express their sincere gratitude and appreciation to Sandra D. Gaona, Mitchell Sumner and Steve DeVito of the USEPA’s Toxics Release Inventory Program, for their critical review of draft versions of our manuscripts, their recommendations, and insightful discussions.
 
 -----------------------------------------------------------------------------------------------------------------------------
 <a name="myfootnote1">1</a>: Recycling, energy recovery, treatment & disposal facility (RETDF).
 
-<a name="myfootnote2">2</a>: The data entries of float type are in **kg**.
+<a name="myfootnote2">2</a>: The data entries of float type are in **kg/yr**.
 
 <a name="myfootnote3">3</a>: They are 7 files.
 
