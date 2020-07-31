@@ -113,7 +113,7 @@ def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
             'Environmental compartment':'str',
             'RETDF chemical flow releases to the compartment':'float',
             'RETDF total chemical release': 'float'}
-    df = pd.read_csv(dir_path + '/EoL_database_for_MC.csv', sep = ',', usecols = columns, low_memory = False, dtype = type, header = 0)
+    df = pd.read_csv(dir_path + '/EoL_dataset_for_MC.csv', sep = ',', usecols = columns, low_memory = False, dtype = type, header = 0)
     df_chem = df.loc[df['SRS chemical ID'] == ITN]
     df_sankey = df_chem[['Generator primary NAICS name',
                     'Generator condition of use',
