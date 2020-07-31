@@ -94,7 +94,7 @@ def values(x):
 
 
 def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
-    dir_path = os.path.dirname(os.path.realpath(__file__)) # Current directory
+    dir_path = os.path.dirname(os.path.realpath(__file__)).replace('\\', '/') # Current directory
     columns = ['Generator primary NAICS name', 'SRS chemical ID',\
            'Generator condition of use', 'Quantity transferred by generator', 'EoL activity category under TSCA', \
            'EoL activity category under waste management hierarchy', 'RETDF TRIF ID', 'RETDF primary NAICS name', \
