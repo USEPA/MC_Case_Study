@@ -11,11 +11,14 @@ This code was written to support the case study for *Methylene Chloride* for the
 
 ## Requirements
 
-The following Python libraries are required for running the code:
+This code was written using Python 3.x, Anaconda 3, and operating system Ubuntu 18.04. The following Python libraries are required for running the code:
 
 1. numpy (https://pypi.org/project/numpy/)
 2. plotly (https://pypi.org/project/plotly/)
 3. pandas (https://pypi.org/project/pandas/)
+4. psutil (https://pypi.org/project/psutil/)
+5. requests (https://pypi.org/project/requests/)
+6. plotly-orca (https://anaconda.org/plotly/plotly-orca)
 
 ## How to use
 
@@ -27,7 +30,6 @@ The Python Script requires the EoL_dataset_for_MC.csv to run the case study for 
 | SRS chemical ID  | Integer  |
 | Generator condition of use  | Alphanumeric  |
 | Quantity transferred by generator  | Float  |
-| EoL activity category under TSCA  | Alphanumeric |
 | EoL activity category under TSCA  | Alphanumeric |
 | EoL activity category under waste management hierarchy | Alphanumeric |
 | RETDF TRIF ID | Alphanumeric |
