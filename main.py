@@ -96,6 +96,8 @@ def values(x):
 
 def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
     dir_path = os.path.dirname(os.path.realpath(__file__)).replace('\\', '/') # Current directory
+    if not os.path.isdir(dir_path + '/output'):
+        os.mkdir(dir_path + '/output')
     type = {'Generator primary NAICS name':'str',
             'SRS chemical ID': 'str',
             'Generator condition of use':'str',

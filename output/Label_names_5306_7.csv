@@ -1,9 +1,9 @@
 Col 1,Col 2
 Discarded,EC-1
-indoor air,EC-2
-on-site soil,EC-3
-on-site surface water,EC-4
-outdoor air,EC-5
+Fugitive air release,EC-2
+On-site soil release,EC-3
+On-site surface water release,EC-4
+Stack air release,EC-5
 Energy,EC-6
 Recycled,EC-7
 Treated,EC-8

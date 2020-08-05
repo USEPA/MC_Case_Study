@@ -9,15 +9,15 @@ All other basic organic chemical manufacturing,Ancillary or other use,0.66332073
 All other basic organic chemical manufacturing,Produce the chemical,0.0031314155011534684
 All other basic organic chemical manufacturing,Produce the chemical + Repackaging,0.8172482134202729
 All other basic organic chemical manufacturing,Produce the chemical + Used as a reactant + Added as a formulation component + As a process impurity + Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,4.4002626696120484e-05
-All other basic organic chemical manufacturing,Repackaging + Used as a chemical processing aid + Ancillary or other use,0.03043095940513132
+All other basic organic chemical manufacturing,Repackaging + Used as a chemical processing aid + Ancillary or other use,0.030430959405131318
 All other basic organic chemical manufacturing,Used as a chemical processing aid,0.45752045414539355
 All other basic organic chemical manufacturing,Used as a chemical processing aid + Used as a manufacturing aid,1.6405122145742914
 All other basic organic chemical manufacturing,Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,0.314832507948931
 All other basic organic chemical manufacturing,Used as a reactant + Added as a formulation component + Repackaging + Used as a chemical processing aid,0.3728719725611139
 All other basic organic chemical manufacturing,Used as a reactant + Used as a chemical processing aid + Ancillary or other use,0.011239528076094775
-All other miscellaneous chemical product and preparation manufacturing,Added as a formulation component + Ancillary or other use,0.0596864200685234
+All other miscellaneous chemical product and preparation manufacturing,Added as a formulation component + Ancillary or other use,0.05968642006852341
 All other miscellaneous chemical product and preparation manufacturing,Ancillary or other use,0.0015715223820043029
-All other miscellaneous chemical product and preparation manufacturing,Produce the chemical + Repackaging + As a process impurity,0.0001634383277284475
+All other miscellaneous chemical product and preparation manufacturing,Produce the chemical + Repackaging + As a process impurity,0.00016343832772844748
 All other miscellaneous chemical product and preparation manufacturing,Used as a chemical processing aid,0.5619261150330807
 All other miscellaneous chemical product and preparation manufacturing,Used as a reactant + Used as a chemical processing aid,0.004714567146012909
 Ammunition (except small arms) manufacturing,Used as a chemical processing aid,0.17412467992607678
@@ -45,13 +45,13 @@ Materials recovery facilities,Import the chemical + Added as a formulation compo
 Medicinal and botanical manufacturing,Produce the chemical + Used as a chemical processing aid + Ancillary or other use,3.939454590892952
 Medicinal and botanical manufacturing,Used as a chemical processing aid,7.684933029633637
 Medicinal and botanical manufacturing,Used as a chemical processing aid + Ancillary or other use,0.06757546242618503
-Medicinal and botanical manufacturing,Used as a chemical processing aid + Used as a manufacturing aid,23.889654642276614
+Medicinal and botanical manufacturing,Used as a chemical processing aid + Used as a manufacturing aid,23.88965464227661
 Medicinal and botanical manufacturing,Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,0.5993157756011609
 Medicinal and botanical manufacturing,Used as a reactant + Added as a formulation component,0.044002626696120484
 "Metal coating, engraving (except jewelry and silverware), and allied services to manufacturers ",Ancillary or other use,0.015086614867241306
 "Metal crown, closure, and other metal stamping (except automotive) ",Ancillary or other use,3.143044764008606e-05
 National security,Ancillary or other use,0.015086614867241306
-National security,Used as a chemical processing aid + Ancillary or other use,0.0055946196799353184
+National security,Used as a chemical processing aid + Ancillary or other use,0.005594619679935318
 Other basic inorganic chemical manufacturing,Added as a formulation component + Repackaging,0.03737708833359034
 Other basic inorganic chemical manufacturing,Produce the chemical + Used as a reactant + Added as a formulation component,11.05094539025426
 Other chemical and allied products merchant wholesalers,Repackaging,0.021165263440833956
@@ -61,7 +61,7 @@ Pesticide and other agricultural chemical manufacturing,Ancillary or other use,1
 Pesticide and other agricultural chemical manufacturing,Used as a chemical processing aid + Ancillary or other use,0.0001697244172564647
 Pesticide and other agricultural chemical manufacturing,Used as a reactant,0.006474672213857727
 Pesticide and other agricultural chemical manufacturing,Used as a reactant + As a process impurity + Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,0.1634383277284475
-Petrochemical manufacturing,Used as a chemical processing aid,2.4866638675612363
+Petrochemical manufacturing,Used as a chemical processing aid,2.486663867561236
 Petroleum lubricating oil and grease manufacturing,Added as a formulation component,3.143044764008606e-05
 Pharmaceutical preparation manufacturing,Produce the chemical + Import the chemical + Repackaging + Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,6.67255831219971
 Pharmaceutical preparation manufacturing,Used as a chemical processing aid,3.1619030326480937
@@ -72,7 +72,7 @@ Photographic and photocopying equipment manufacturing,Used as a chemical process
 Plastics material and resin manufacturing,Added as a formulation component + As a process impurity + Used as a chemical processing aid,0.005732913649551697
 Plastics material and resin manufacturing,Ancillary or other use,0.010566916496596936
 Plastics material and resin manufacturing,Produce the chemical + Added as a formulation component + Used as a chemical processing aid + Ancillary or other use,0.20145031104893363
-Precision turned product manufacturing,Ancillary or other use,0.003092756047784468
-"Special die and tool, die set, jig, and fixture manufacturing ",Ancillary or other use,0.00033316274498491216
+Precision turned product manufacturing,Ancillary or other use,0.0030927560477844685
+"Special die and tool, die set, jig, and fixture manufacturing ",Ancillary or other use,0.0003331627449849122
 Sporting and athletic goods manufacturing,Ancillary or other use,0.00250186363215085
 Surgical and medical instrument manufacturing,Used as a manufacturing aid,0.08360499072262892
