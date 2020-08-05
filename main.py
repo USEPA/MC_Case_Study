@@ -8,6 +8,7 @@ pd.options.mode.chained_assignment = None
 import os
 import warnings
 warnings.simplefilter(action = 'ignore', category = FutureWarning)
+warnings.simplefilter(action = 'ignore', category = RuntimeWarning)
 import plotly
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -95,11 +96,6 @@ def values(x):
 
 def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
     dir_path = os.path.dirname(os.path.realpath(__file__)).replace('\\', '/') # Current directory
-    columns = ['Generator primary NAICS name', 'SRS chemical ID',\
-           'Generator condition of use', 'Quantity transferred by generator', 'EoL activity category under TSCA', \
-           'EoL activity category under waste management hierarchy', 'RETDF TRIF ID', 'RETDF primary NAICS name', \
-           'Maximum amount of chemical present at RETDF', 'Total chemical generated as waste by RETDF', \
-           'Environmental compartment', 'RETDF chemical flow releases to the compartment', 'RETDF total chemical release']
     type = {'Generator primary NAICS name':'str',
             'SRS chemical ID': 'str',
             'Generator condition of use':'str',
@@ -113,7 +109,7 @@ def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
             'Environmental compartment':'str',
             'RETDF chemical flow releases to the compartment':'float',
             'RETDF total chemical release': 'float'}
-    df = pd.read_csv(dir_path + '/EoL_dataset_for_MC.csv', sep = ',', usecols = columns, low_memory = False, dtype = type, header = 0)
+    df = pd.read_csv(dir_path + '/input/EoL_dataset_for_MC.csv', sep = ',', low_memory = False, dtype = type, header = 0)
     df_chem = df.loc[df['SRS chemical ID'] == ITN]
     df_sankey = df_chem[['Generator primary NAICS name',
                     'Generator condition of use',
@@ -216,7 +212,8 @@ def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
     i = 0
     for gr in [group1, group2, group3, group4, group5, group6]:
         i = i + 1
-        gr.to_csv(dir_path + '/Percentages_{}_'.format(ITN) + str(i) + '.csv', sep = ',', index = False)
+        gr.drop(columns=[col for col in gr.columns if 'Quantity' in col or 'MEAN' in col], inplace=True)
+        gr.to_csv(dir_path + f'/output/Percentages_{ITN}_{i}.csv', sep = ',', index = False)
 
     # Saving label names
     TRI = {'Added as a formulation component': 'TRIU-1',
@@ -236,7 +233,7 @@ def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
     for l in [GiS, TRI, CoU_aux, RETDFiS, EoL, WMH, EC]:
         j = j + 1
         df_aux = pd.DataFrame({'Col 1': list(l.keys()), 'Col 2': list(l.values())})
-        df_aux.to_csv(dir_path + '/Label_names_{}_'.format(ITN) + str(j) + '.csv', sep = ',', index = False)
+        df_aux.to_csv(dir_path + f'/output/Label_names_{ITN}_{j}.csv', sep = ',', index = False)
 
     # Levels and colors
     level_1 = list(GiS.values())
@@ -308,7 +305,7 @@ def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
                        paper_bgcolor = '#e8e8e8',
                        width=1000,
                        height=900)
-    fig1.write_image(dir_path + '/Sankey_{}.pdf'.format(ITN))
+    fig1.write_image(dir_path + f'/output/Sankey_{ITN}.pdf')
 
     df_box = df5.iloc[:,[1,5] + list(range(n_cols,Sample + n_cols))]
     EC_non_cero = list(df_box.loc[~(df_box.iloc[:,2:] == 0.0).all(axis = 1), 'Environmental compartment'].unique())
@@ -413,7 +410,7 @@ def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
                 )
     fig2.update_xaxes(title_font=dict(size=18))
     fig2.update_yaxes(title_font=dict(size=20))
-    fig2.write_image(dir_path + '/Box_{}.pdf'.format(ITN))
+    fig2.write_image(dir_path + f'/output/Box_{ITN}.pdf')
 
     # Histogram
     df_histogram = pd.DataFrame(columns = ['Management', 'Flow', 'Environmental compartment'])
@@ -493,7 +490,7 @@ def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
                                         bgcolor = 'White',
                                         bordercolor = '#6666ff',
                                         borderwidth = 1))
-    fig3.write_image(dir_path + '/Histogram_{}.pdf'.format(ITN))
+    fig3.write_image(dir_path + f'/output/Histogram_{ITN}.pdf')
 
 
 if __name__ == '__main__':

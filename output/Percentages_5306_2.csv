@@ -1,0 +1,77 @@
+Generator condition of use,RETDF primary NAICS name,Proportion
+Added as a formulation component,All other miscellaneous chemical product and preparation manufacturing,0.014910604360456827
+Added as a formulation component,Hazardous waste treatment and disposal,0.01650098501104518
+Added as a formulation component + Ancillary or other use,All other miscellaneous chemical product and preparation manufacturing,0.1411729986756444
+Added as a formulation component + Ancillary or other use,Cement manufacturing,0.3587659876048093
+Added as a formulation component + Ancillary or other use,Hazardous waste treatment and disposal,0.11382222308380764
+Added as a formulation component + Ancillary or other use,Materials recovery facilities,0.007172428151467638
+Added as a formulation component + As a process impurity + Used as a chemical processing aid,Hazardous waste treatment and disposal,0.005732913649551697
+Added as a formulation component + Repackaging,Solid waste combustors and incinerators,0.03737708833359034
+Added as a formulation component + Repackaging + Ancillary or other use,Cement manufacturing,6.621766708951915
+Added as a formulation component + Repackaging + Ancillary or other use,Hazardous waste treatment and disposal,0.364134308089453
+Added as a formulation component + Repackaging + Ancillary or other use,Solid waste combustors and incinerators,2.082814045889205
+Added as a formulation component + Repackaging + Used as a chemical processing aid,Cement manufacturing,0.01198757272992882
+Added as a formulation component + Repackaging + Used as a chemical processing aid,Hazardous waste treatment and disposal,0.4146053209376202
+Added as a formulation component + Repackaging + Used as a chemical processing aid + Ancillary or other use,Solid waste combustors and incinerators,0.28278602347966536
+Added as a formulation component + Used as a chemical processing aid,Hazardous waste treatment and disposal,0.13158671208998426
+Ancillary or other use,All other miscellaneous chemical product and preparation manufacturing,0.0015715223820043029
+Ancillary or other use,Cement manufacturing,3.9992342963460326
+Ancillary or other use,Hazardous waste treatment and disposal,2.023821157420538
+Ancillary or other use,Solid waste combustors and incinerators,0.674450637815235
+As a process impurity,Cement manufacturing,1.606766474514636
+As a process impurity,Hazardous waste treatment and disposal,1.9612598773075042e-05
+As a process impurity,Petroleum lubricating oil and grease manufacturing,4.362545467237554e-05
+As a process impurity + Ancillary or other use,Cement manufacturing,0.028601707352478314
+As a process impurity + Ancillary or other use,Hazardous waste treatment and disposal,0.001602952829644389
+Import the chemical + Added as a formulation component + Ancillary or other use,Hazardous waste treatment and disposal,0.04581767156170051
+Import the chemical + Added as a formulation component + Ancillary or other use,Materials recovery facilities,0.21963590519148354
+Produce the chemical,Hazardous waste treatment and disposal,0.0031314155011534684
+Produce the chemical + Added as a formulation component,Cement manufacturing,0.005763445181621965
+Produce the chemical + Added as a formulation component,Materials recovery facilities,0.4556786021690347
+Produce the chemical + Added as a formulation component + Used as a chemical processing aid + Ancillary or other use,Hazardous waste treatment and disposal,0.1515261880174209
+Produce the chemical + Added as a formulation component + Used as a chemical processing aid + Ancillary or other use,Materials recovery facilities,0.0499241230315127
+Produce the chemical + Import the chemical + Repackaging + As a process impurity + Ancillary or other use,Cement manufacturing,1.8510773556051512
+Produce the chemical + Import the chemical + Repackaging + As a process impurity + Ancillary or other use,Hazardous waste treatment and disposal,0.00917140462137711
+Produce the chemical + Import the chemical + Repackaging + As a process impurity + Ancillary or other use,Solid waste combustors and incinerators,0.0037716537168103266
+Produce the chemical + Import the chemical + Repackaging + Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,Cement manufacturing,6.663254899698244
+Produce the chemical + Import the chemical + Repackaging + Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,Hazardous waste treatment and disposal,0.009303412501465472
+Produce the chemical + Repackaging,All other basic organic chemical manufacturing,0.8066561525655638
+Produce the chemical + Repackaging,Hazardous waste treatment and disposal,0.010592060854709005
+Produce the chemical + Repackaging + Ancillary or other use,Cement manufacturing,0.29953983500820136
+Produce the chemical + Repackaging + Ancillary or other use,Hazardous waste treatment and disposal,0.0679990191391372
+Produce the chemical + Repackaging + As a process impurity,Solid waste combustors and incinerators,0.0001634383277284475
+Produce the chemical + Used as a chemical processing aid + Ancillary or other use,Cement manufacturing,0.20392703043384025
+Produce the chemical + Used as a chemical processing aid + Ancillary or other use,Hazardous waste treatment and disposal,0.008574226116215477
+Produce the chemical + Used as a chemical processing aid + Ancillary or other use,Materials recovery facilities,3.726953334342898
+Produce the chemical + Used as a reactant + Added as a formulation component,Hazardous waste treatment and disposal,11.05094539025426
+Produce the chemical + Used as a reactant + Added as a formulation component + As a process impurity + Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,All other basic organic chemical manufacturing,3.771653716810327e-05
+Produce the chemical + Used as a reactant + Added as a formulation component + As a process impurity + Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,Hazardous waste treatment and disposal,6.286089528017212e-06
+Repackaging,Cement manufacturing,2.9351805678601703
+Repackaging,Hazardous waste treatment and disposal,0.3645972786552555
+Repackaging,Solid waste combustors and incinerators,6.286089528017212e-05
+Repackaging + Ancillary or other use,Hazardous waste treatment and disposal,0.09103313700219402
+Repackaging + As a process impurity + Ancillary or other use,Cement manufacturing,0.0842210274963746
+Repackaging + Used as a chemical processing aid + Ancillary or other use,Hazardous waste treatment and disposal,0.03043095940513132
+Used as a chemical processing aid,Cement manufacturing,0.34797277191292075
+Used as a chemical processing aid,Hazardous waste treatment and disposal,8.84756414663563
+Used as a chemical processing aid,Materials recovery facilities,4.800774577107213
+Used as a chemical processing aid,"Photographic film, paper, plate, and chemical manufacturing ",0.0034636353299374836
+Used as a chemical processing aid,Solid waste combustors and incinerators,1.0364315831663278
+Used as a chemical processing aid + Ancillary or other use,Hazardous waste treatment and disposal,6.938001015863403
+Used as a chemical processing aid + Ancillary or other use,Materials recovery facilities,2.5499396446393905
+Used as a chemical processing aid + Used as a manufacturing aid,Cement manufacturing,0.2703018497047401
+Used as a chemical processing aid + Used as a manufacturing aid,Hazardous waste treatment and disposal,25.25986500714616
+Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,Hazardous waste treatment and disposal,0.314832507948931
+Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,Solid waste combustors and incinerators,0.5993157756011609
+Used as a manufacturing aid,Hazardous waste treatment and disposal,0.03134558543145782
+Used as a manufacturing aid,Materials recovery facilities,0.188815271153053
+Used as a manufacturing aid,Solid waste combustors and incinerators,0.08234607557063556
+Used as a reactant,Hazardous waste treatment and disposal,0.005859892652474259
+Used as a reactant,Materials recovery facilities,0.03510781001397612
+Used as a reactant,Pesticide and other agricultural chemical manufacturing,0.0015715223820043029
+Used as a reactant + Added as a formulation component,Hazardous waste treatment and disposal,0.044002626696120484
+Used as a reactant + Added as a formulation component + Repackaging + Used as a chemical processing aid,Hazardous waste treatment and disposal,0.13259248641446705
+Used as a reactant + Added as a formulation component + Repackaging + Used as a chemical processing aid,Solid waste combustors and incinerators,0.2402794861466468
+Used as a reactant + As a process impurity + Used as a chemical processing aid + Used as a manufacturing aid + Ancillary or other use,Hazardous waste treatment and disposal,0.1634383277284475
+Used as a reactant + Used as a chemical processing aid,Hazardous waste treatment and disposal,0.004714567146012909
+Used as a reactant + Used as a chemical processing aid + Ancillary or other use,Hazardous waste treatment and disposal,0.011239528076094775

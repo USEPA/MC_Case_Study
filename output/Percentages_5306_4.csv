@@ -1,0 +1,15 @@
+RETDF primary NAICS name,EoL activity category under TSCA,Proportion
+All other basic organic chemical manufacturing,Incinerators,0.2024120828298712
+All other basic organic chemical manufacturing,Industrial wastewater treatment,0.0008046194595862031
+All other miscellaneous chemical product and preparation manufacturing,Incinerators,0.15608360303610122
+All other miscellaneous chemical product and preparation manufacturing,Other treatment,0.0015715223820043029
+Cement manufacturing,Incinerators,7.510714059445603
+Hazardous waste treatment and disposal,Incinerators,21.83648691291046
+Hazardous waste treatment and disposal,Industrial wastewater treatment,0.3336027712518735
+Hazardous waste treatment and disposal,"Landfill (municipal, hazardous or other land disposal)",0.015495210686562424
+Hazardous waste treatment and disposal,Underground injection,0.001131496115043098
+Materials recovery facilities,Incinerators,3.762061144356874
+Materials recovery facilities,Industrial wastewater treatment,0.09406504369724954
+Materials recovery facilities,Other treatment,0.0499241230315127
+Pesticide and other agricultural chemical manufacturing,Industrial wastewater treatment,0.0015715223820043029
+Solid waste combustors and incinerators,Incinerators,5.039798668942283
