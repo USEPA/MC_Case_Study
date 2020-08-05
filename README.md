@@ -17,8 +17,8 @@ This code was written using Python 3.x, Anaconda 3, and operating system Ubuntu 
 2. plotly (https://pypi.org/project/plotly/)
 3. pandas (https://pypi.org/project/pandas/)
 4. psutil (https://pypi.org/project/psutil/)
-4  requests (https://pypi.org/project/requests/)
-5. plotly-orca (https://anaconda.org/plotly/plotly-orca), via Anaconda prompt
+5. requests (https://pypi.org/project/requests/)
+6. plotly-orca (https://anaconda.org/plotly/plotly-orca)
 
 ## How to use
 
