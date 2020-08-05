@@ -11,7 +11,7 @@ This code was written to support the case study for *Methylene Chloride* for the
 
 ## Requirements
 
-The following Python libraries are required for running the code:
+This code was written using Python 3.x. The following Python libraries are required for running the code:
 
 1. numpy (https://pypi.org/project/numpy/)
 2. plotly (https://pypi.org/project/plotly/)
