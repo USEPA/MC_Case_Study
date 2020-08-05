@@ -22,7 +22,7 @@ This code was written using Python 3.x, Anaconda 3, and operating system Ubuntu 
 
 ## How to use
 
-The Python Script requires the EoL_dataset_for_MC.csv to run the case study for Methylene Chloride which is in the folder output. The EoL_dataset_for_MC.csv is composed of the following data entries according to Table S2 in the Supporting Information for the abovementioned journal paper:
+The Python Script requires the EoL_dataset_for_MC.csv, which is in the folder output, to run the case study for Methylene Chloride. The EoL_dataset_for_MC.csv is composed of the following data entries according to Table S2 in the Supporting Information for the abovementioned journal paper:
 
 | Data name | Data type<sup>[2](#myfootnote2)</sup> |
 | ------------- | ------------- |
@@ -48,7 +48,7 @@ python main.py
   
 ## Outputs
 
-After running the Python script you obtain the following files:
+After running the Python script you obtain the following files in the output folder:
 
 | File name | Description |
 | ------------- | ------------- |
