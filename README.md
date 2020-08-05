@@ -16,6 +16,8 @@ The following Python libraries are required for running the code:
 1. numpy (https://pypi.org/project/numpy/)
 2. plotly (https://pypi.org/project/plotly/)
 3. pandas (https://pypi.org/project/pandas/)
+4. psutil (https://pypi.org/project/psutil/)
+5. plotly-orca-1.2.1 (https://anaconda.org/plotly/plotly-orca), via Anaconda prompt
 
 ## How to use
 
