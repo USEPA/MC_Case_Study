@@ -48,7 +48,7 @@ python main.py
   
 ## Outputs
 
-After running the Python script you obtain the following files in the output folder:
+After running the Python script you obtain an output folder with the following files:
 
 | File name | Description |
 | ------------- | ------------- |
