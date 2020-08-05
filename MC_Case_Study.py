@@ -8,6 +8,7 @@ pd.options.mode.chained_assignment = None
 import os
 import warnings
 warnings.simplefilter(action = 'ignore', category = FutureWarning)
+warnings.simplefilter(action = 'ignore', category = RuntimeWarning)
 import plotly
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -95,11 +96,6 @@ def values(x):
 
 def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
     dir_path = os.path.dirname(os.path.realpath(__file__)).replace('\\', '/') # Current directory
-    columns = ['Generator primary NAICS name', 'SRS chemical ID',\
-           'Generator condition of use', 'Quantity transferred by generator', 'EoL activity category under TSCA', \
-           'EoL activity category under waste management hierarchy', 'RETDF TRIF ID', 'RETDF primary NAICS name', \
-           'Maximum amount of chemical present at RETDF', 'Total chemical generated as waste by RETDF', \
-           'Environmental compartment', 'RETDF chemical flow releases to the compartment', 'RETDF total chemical release']
     type = {'Generator primary NAICS name':'str',
             'SRS chemical ID': 'str',
             'Generator condition of use':'str',
@@ -113,7 +109,7 @@ def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
             'Environmental compartment':'str',
             'RETDF chemical flow releases to the compartment':'float',
             'RETDF total chemical release': 'float'}
-    df = pd.read_csv(dir_path + '/EoL_dataset_for_MC.csv', sep = ',', usecols = columns, low_memory = False, dtype = type, header = 0)
+    df = pd.read_csv(dir_path + '/EoL_dataset_for_MC.csv', sep = ',', low_memory = False, dtype = type, header = 0)
     df_chem = df.loc[df['SRS chemical ID'] == ITN]
     df_sankey = df_chem[['Generator primary NAICS name',
                     'Generator condition of use',
