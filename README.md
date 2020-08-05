@@ -40,7 +40,7 @@ The Python Script requires the EoL_dataset_for_MC.csv, which is in the folder ou
 | RETDF chemical flow releases to the compartment | Float |
 | RETDF total chemical release | Float |
 
-To run the Python script, you need to navigate to the directory containing main.py and. Then, you execute the following command either on Windows CMD or Unix terminal:
+To run the Python script, you need to navigate to the directory containing main.py. Then, you execute the following command either on Windows CMD or Unix terminal:
 
 ```
 python main.py
