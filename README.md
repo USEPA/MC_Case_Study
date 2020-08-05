@@ -30,7 +30,6 @@ The Python Script requires the EoL_dataset_for_MC.csv to run the case study for 
 | Generator condition of use  | Alphanumeric  |
 | Quantity transferred by generator  | Float  |
 | EoL activity category under TSCA  | Alphanumeric |
-| EoL activity category under TSCA  | Alphanumeric |
 | EoL activity category under waste management hierarchy | Alphanumeric |
 | RETDF TRIF ID | Alphanumeric |
 | RETDF primary NAICS name | Alphanumeric |
