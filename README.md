@@ -11,12 +11,13 @@ This code was written to support the case study for *Methylene Chloride* for the
 
 ## Requirements
 
-This code was written using Python 3.x. The following Python libraries are required for running the code:
+This code was written using Python 3.x, Anaconda 3, and operating system Ubuntu 18.04. The following Python libraries are required for running the code:
 
 1. numpy (https://pypi.org/project/numpy/)
 2. plotly (https://pypi.org/project/plotly/)
 3. pandas (https://pypi.org/project/pandas/)
 4. psutil (https://pypi.org/project/psutil/)
+4  requests (https://pypi.org/project/requests/)
 5. plotly-orca (https://anaconda.org/plotly/plotly-orca), via Anaconda prompt
 
 ## How to use
