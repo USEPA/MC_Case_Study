@@ -212,6 +212,7 @@ def Creating_tracking_and_analyses(Sample = 100, ITN = '5306'):
     i = 0
     for gr in [group1, group2, group3, group4, group5, group6]:
         i = i + 1
+        gr.drop(columns=[col for col in gr.columns if 'Quantity' in col or 'MEAN' in col], inplace=True)
         gr.to_csv(dir_path + '/Percentages_{}_'.format(ITN) + str(i) + '.csv', sep = ',', index = False)
 
     # Saving label names
