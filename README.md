@@ -1,6 +1,6 @@
 # MC Case Study
 
-This code was written to support the case study for *Methylene Chloride* for the paper named ***Data engineering for tracking chemicals and releases at industrial end-of-life activities***. 
+This code was written to support the case study for *Methylene Chloride* for the paper named [***Data engineering for tracking chemicals and releases at industrial end-of-life activities***](https://www.sciencedirect.com/science/article/abs/pii/S0304389420322603). 
 
 <sup>[1](#myfootnote1)</sup>
 
